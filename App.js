@@ -35,9 +35,9 @@ export default function App() {
 
   return (
     <>
-    <StatusBar style="light"/>
+    <StatusBar style="dark"/>
     <View style={styles.appContainer}>
-      <Button title='Add New Task' color = "#a065ec" onPress={startAddTaskHandler}/>
+      <Button title='Add New Task' color = "black" onPress={startAddTaskHandler}/>
     <TaskInput
      visible={modalIsVisible} 
      onAddTask={addTaskHandler} 
@@ -66,7 +66,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 50,
     paddingHorizontal: 16,
-    backgroundColor: '#1e085a'
     //You can add a "backgroundColor" in app.json.
   },
   tasksContainer: {
