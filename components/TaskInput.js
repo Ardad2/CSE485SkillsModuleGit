@@ -1,35 +1,34 @@
 import { useState } from 'react';
 import { StyleSheet, View, TextInput, Button, Modal, Image } from 'react-native';
 
-function GoalInput(props) {
+function TaskInput(props) {
 
-    const [enteredGoalText, setEnteredGoalText] = useState('');
+    const [enteredTaskText, setEnteredTaskText] = useState('');
 
-    function goalInputHandler(enteredText) {
-        setEnteredGoalText(enteredText);
+    function taskInputHandler(enteredText) {
+        setEnteredTaskText(enteredText);
       };
 
-      function addGoalHandler() {
-          props.onAddGoal(enteredGoalText);
-          setEnteredGoalText('');
+      function addTaskHandler() {
+          props.onAddTask(enteredTaskText);
+          setEnteredTaskText('');
       }
 
     return (
         <Modal visible={props.visible} animationType="slide">
         <View style ={styles.inputContainer}>
-            <Image style={styles.image} source={require('../assets/goal.png')}/>
         <TextInput 
         style={styles.textInput} 
-        placeholder="Your course goal!"
+        placeholder="Your task!"
         
         //Note if it was goalInputHandler() it would get executed as soon as React starts.
 
-         onChangeText={goalInputHandler}
-         value={enteredGoalText}
+         onChangeText={taskInputHandler}
+         value={enteredTaskText}
          />
          <View style={styles.buttonContainer}>
              <View style={styles.button} >
-                <Button title="Add Goal" onPress={addGoalHandler} color="#b180f0"/>
+                <Button title="Add Task" onPress={addTaskHandler} color="#b180f0"/>
             </View>
             <View style={styles.button}>
                 <Button title="Cancel" onPress={props.onCancel} color="#f31282"/>
@@ -41,7 +40,7 @@ function GoalInput(props) {
     )
 };
 
-export default GoalInput;
+export default TaskInput;
 
 const styles = StyleSheet.create({
     inputContainer: {
