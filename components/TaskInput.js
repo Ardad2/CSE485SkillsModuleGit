@@ -21,17 +21,16 @@ function TaskInput(props) {
         style={styles.textInput} 
         placeholder="Your task!"
         
-        //Note if it was goalInputHandler() it would get executed as soon as React starts.
 
          onChangeText={taskInputHandler}
          value={enteredTaskText}
          />
          <View style={styles.buttonContainer}>
              <View style={styles.button} >
-                <Button title="Add Task" onPress={addTaskHandler} color="#b180f0"/>
+                <Button title="Add Task" onPress={addTaskHandler} color="black"/>
             </View>
             <View style={styles.button}>
-                <Button title="Cancel" onPress={props.onCancel} color="#f31282"/>
+                <Button title="Cancel" onPress={props.onCancel} color="black"/>
             </View>
         </View>
       </View>
@@ -48,7 +47,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       padding: 16,
-      backgroundColor: '#311b6b'
+      backgroundColor: '#fffff'
     },
     image: {
         width: 100,
@@ -58,7 +57,7 @@ const styles = StyleSheet.create({
     textInput: {
       borderWidth: 1,
       borderColor: '#e4d0ff',
-      backgroundColor: '#e4d0ff',
+      backgroundColor: 'silver',
       color: '#120438',
       borderRadius: 6,
       width: '100%',
@@ -70,6 +69,7 @@ const styles = StyleSheet.create({
     },
     button: {
         width: 100,
-        marginHorizontal: 8
+        marginHorizontal: 8,
+        backgroundColor: "silver"
     }
   });
