@@ -6,30 +6,30 @@ import {
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
-import GoalItem from './components/GoalItem';
-import GoalInput from './components/GoalInput';
+import TaskItem from './components/TaskItem';
+import TaskInput from './components/TaskInput';
 
 export default function App() {
 
   const [modalIsVisible, setModalIsVisible] = useState(false);
-  const [courseGoals, setCourseGoals] = useState([]);
+  const [courseTasks, setCourseTasks] = useState([]);
 
-  function startAddGoalHandler() {
+  function startAddTaskHandler() {
     setModalIsVisible(true);
   }
 
-  function endAddGoalHandler() {
+  function endAddTaskHandler() {
     setModalIsVisible(false);
   }
   
-  function addGoalHandler(enteredGoalText) {
-    setCourseGoals(currentCourseGoals => [...currentCourseGoals, {text: enteredGoalText, id: Math.random().toString() }       ]);
-  endAddGoalHandler();
+  function addTaskHandler(enteredTaskText) {
+    setCourseTasks(currentCourseTasks => [...currentCourseTasks, {text: enteredTasktext, id: Math.random().toString() }       ]);
+  endAddTaskHandler();
   }
 
-  function deleteGoalHandler(id) {
-    setCourseGoals( (currentCourseGoals) => {
-      return currentCourseGoals.filter((goal) => goal.id != id);
+  function deleteTaskHandler(id) {
+    setCourseTasks( (currentCourseTasks) => {
+      return currentCourseTasks.filter((task) => task.id != id);
     } );
   }
 
@@ -37,18 +37,18 @@ export default function App() {
     <>
     <StatusBar style="light"/>
     <View style={styles.appContainer}>
-      <Button title='Add New Goal' color = "#a065ec" onPress={startAddGoalHandler}/>
-    <GoalInput
+      <Button title='Add New Task' color = "#a065ec" onPress={startAddTaskHandler}/>
+    <TaskInput
      visible={modalIsVisible} 
-     onAddGoal={addGoalHandler} 
-     onCancel={endAddGoalHandler}
+     onAddTask={addTaskHandler} 
+     onCancel={endAddTaskHandler}
      />
-      <View style={styles.goalsContainer}>
-        <FlatList data={courseGoals} renderItem = {itemData => {
-          return <GoalItem 
+      <View style={styles.tasksContainer}>
+        <FlatList data={courseTasks} renderItem = {itemData => {
+          return <TaskItem 
           text={itemData.item.text} 
           id = {itemData.item.id}
-          onDeleteItem={deleteGoalHandler}
+          onDeleteItem={deleteTaskHandler}
           />
 
         }}
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#1e085a'
     //You can add a "backgroundColor" in app.json.
   },
-  goalsContainer: {
+  tasksContainer: {
     flex: 5
   },
 });
