@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       padding: 16,
-      backgroundColor: '#fffff'
+      backgroundColor: 'black'
     },
     image: {
         width: 100,
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     textInput: {
       borderWidth: 1,
       borderColor: '#e4d0ff',
-      backgroundColor: 'silver',
+      backgroundColor: 'white',
       color: '#120438',
       borderRadius: 6,
       width: '100%',
