@@ -23,7 +23,7 @@ export default function App() {
   }
   
   function addTaskHandler(enteredTaskText) {
-    setCourseTasks(currentCourseTasks => [...currentCourseTasks, {text: enteredTasktext, id: Math.random().toString() }       ]);
+    setCourseTasks(currentCourseTasks => [...currentCourseTasks, {text: enteredTaskText, id: Math.random().toString() }       ]);
   endAddTaskHandler();
   }
 

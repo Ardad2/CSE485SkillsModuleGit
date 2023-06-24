@@ -11,7 +11,7 @@ function TaskItem(props) {
         onPress={props.onDeleteItem.bind(this, props.id)}
         style={({pressed}) => pressed && styles.pressedItem}
         > 
-        <Text style={styles.taksText}>{props.text}</Text>
+        <Text style={styles.taskText}>{props.text}</Text>
         </Pressable>
         </View>
     );
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   taskItem: {
     margin: 8,
     borderRadius: 6,
-    backgroundColor: '#5e0acc',
+    backgroundColor: 'black',
     color: 'white'
   },
   pressedItem: {
